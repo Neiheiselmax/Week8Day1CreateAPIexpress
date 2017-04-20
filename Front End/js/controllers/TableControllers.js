@@ -15,12 +15,19 @@
 
           vm.submitForm = function(){
             let user = vm.user;
-            user.id = Date.now();
             let newUser = API.createUsers(user);
             newUser.then(res=>{
               vm.tacos = res.data;
             })
-          }
+          };
+
+          vm.deleteItem = function(id){
+            let deleteData = API.deleteUser(id);
+            deleteData.then(res=>{
+              vm.people = res.data;
+            })
+          };
+
         })
 
        })();

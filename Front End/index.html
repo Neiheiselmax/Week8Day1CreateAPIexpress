@@ -17,14 +17,16 @@
             <th>Age</th>
             <th>id</th>
             <th>Do they like JS?</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
             <tr ng-repeat="taco in vm.tacos">
             <td>{{taco.name}}</td>
             <td>{{taco.age}}</td>
-            <td>{{taco.id}}</td>
+            <td>{{taco._id}}</td>
             <td>{{taco.likesJS}}</td>
+            <td><button ng-click="vm.deleteItem(user._id)"X</button></td>
           </tr>
 
         </tr>
@@ -38,8 +40,8 @@
        <hr>
         Name: <input  class="form-control" type='text' ng-model='vm.user.name' required>
         Age: <input  class="form-control" type='number' ng-model='vm.user.age' required>
-        Likes JS: <input  class="form-control" type='checkbox' ng-model='vm.user.likesJS' required>
-        <button type="submit">Add to Inventory</button>
+        Likes JS: <input type='checkbox' ng-model='vm.user.likesJS' required><br>
+        <button class="btn btn-primary" type="submit">Add to Inventory</button>
   </form>
 </div>
 
